@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableNativeFeedback, StyleSheet } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
 import { Style } from '../global'
 
 export default class TopBar extends Component {
@@ -7,11 +7,12 @@ export default class TopBar extends Component {
     return (
       <View style={styles.wrp}>
         <Text style={styles.title}>{this.props.title}</Text>
-        <TouchableNativeFeedback
+        <TouchableOpacity
           onPress={() => { this.props.goScanCode() }}
+          activeOpacity={0.5}
           background={Style.themeColor}>
           <Text>扫</Text>
-        </TouchableNativeFeedback>
+        </TouchableOpacity>
       </View>
     )
   }

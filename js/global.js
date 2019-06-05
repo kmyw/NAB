@@ -7,7 +7,26 @@ export const Style = {
   norFontSize: 20,
   smlFontSize: 14,
   blackColor: "#000000",
-  themeColor: "#fec400",
+  themeColor: "#9d0a0e",
   grayColor: "gray",
   whiteColor: "#ffffff"
 };
+
+export const CoinType = [
+  {
+    value: 'NABC',
+    label: 'NABC'
+  },
+  {
+    value: 'BTC',
+    label: 'BTC'
+  },
+  {
+    value: 'ETH',
+    label: 'ETH'
+  },
+  {
+    value: 'TEA',
+    label: 'TEA'
+  }
+]

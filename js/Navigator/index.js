@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Image } from "react-native"
+import { Provider } from '@ant-design/react-native'
 import { createStackNavigator, createBottomTabNavigator, createAppContainer, StackViewTransitionConfigs } from 'react-navigation'
 import StackViewStyleInterpolator from "react-navigation-stack/src/views/StackView/StackViewStyleInterpolator"
 
@@ -17,14 +18,17 @@ import ExtractCoin from '../Screen/Home/ExtractCoin'
 import ExchangeCoin from '../Screen/Home/ExchangeCoin'
 import Transaction from '../Screen/Home/Transaction'
 import RechangeCoin from '../Screen/Home/RechargeCoin'
+import ExtractRecord from '../Screen/Home/ExtractRecord'
+import RechargeRecord from '../Screen/Home/RechargeRecord'
+import TransactionRecord from '../Screen/Home/TransactionRecord'
 
-// 切换动画
+// 页面切换动画
 // StackViewStyleInterpolator.forHorizontal：从右向左进入
 // StackViewStyleInterpolator.forVertical：从下向上进入
 // StackViewStyleInterpolator.forFadeFromBottomAndroid：从底部淡出
 // StackViewStyleInterpolator.forFade：无动画
 
-const HomeStack = createStackNavigator({ Home, Detail, ScanCode, LockPosition, ExtractCoin, ExchangeCoin, Transaction, RechangeCoin }, {
+const HomeStack = createStackNavigator({ Home, Detail, ScanCode, LockPosition, ExtractCoin, ExchangeCoin, Transaction, RechangeCoin, ExtractRecord, RechargeRecord, TransactionRecord }, {
   transitionConfig: () => ({ // 设置左右切换
     screenInterpolator: StackViewStyleInterpolator.forHorizontal,
     transitionSpec: {
@@ -155,7 +159,9 @@ const AppContainer = createAppContainer(BottomTabNavigator); //底部导航
 export default class Navigation extends Component {
   render() {
     return (
-      <AppContainer />
+      <Provider>
+        <AppContainer />
+      </Provider>
     )
   }
 }

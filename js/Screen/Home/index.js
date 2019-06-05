@@ -5,7 +5,7 @@ import AssetCard from '../../components/AssetCard'
 import ModuleBar from '../../components/ModuleBar'
 import CoinBar from '../../components/CoinBar'
 
-const screen = Dimensions.get('window');
+const screen = Dimensions.get('window')
 
 export default class Home extends Component {
   static navigationOptions = {
