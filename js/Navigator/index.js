@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Image } from "react-native"
 import { Provider } from '@ant-design/react-native'
-import { createStackNavigator, createBottomTabNavigator, createAppContainer, StackViewTransitionConfigs } from 'react-navigation'
+import { Icon } from '@ant-design/react-native'
+import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation'
 import StackViewStyleInterpolator from "react-navigation-stack/src/views/StackView/StackViewStyleInterpolator"
 
 import { Style } from '../global'
@@ -91,10 +91,7 @@ const BottomTabNavigator = createBottomTabNavigator(
         tabBarLabel: '资产',
         showIcon: true,
         tabBarIcon: ({ tintColor }) => (
-          <Image
-            source={require('../images/vote_tab.png')}
-            style={[{ height: 24, width: 24 }, { tintColor: tintColor }]}
-          />
+          <Icon name="dollar" size={25} color={tintColor} />
         )
       }
     },
@@ -104,10 +101,7 @@ const BottomTabNavigator = createBottomTabNavigator(
         tabBarLabel: '理财',
         showIcon: true,
         tabBarIcon: ({ tintColor }) => (
-          <Image
-            source={require('../images/vote_tab.png')}
-            style={[{ height: 24, width: 24 }, { tintColor: tintColor }]}
-          />
+          <Icon name="bank" size={25} color={tintColor} />
         )
       }
     },
@@ -117,10 +111,7 @@ const BottomTabNavigator = createBottomTabNavigator(
         tabBarLabel: '发现',
         showIcon: true,
         tabBarIcon: ({ tintColor }) => (
-          <Image
-            source={require('../images/vote_tab.png')}
-            style={[{ height: 24, width: 24 }, { tintColor: tintColor }]}
-          />
+          <Icon name="global" size={25} color={tintColor} />
         )
       }
     },
@@ -130,10 +121,7 @@ const BottomTabNavigator = createBottomTabNavigator(
         tabBarLabel: '我的',
         showIcon: true,
         tabBarIcon: ({ tintColor }) => (
-          <Image
-            source={require('../images/vote_tab.png')}
-            style={[{ height: 24, width: 24 }, { tintColor: tintColor }]}
-          />
+          <Icon name="user" size={25} color={tintColor} />
         )
       }
     }

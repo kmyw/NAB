@@ -55,7 +55,7 @@ export default class ExtractCoin extends Component {
             style={styles.rightItem}
             activeOpacity={0.5}
             onPress={() => {
-
+              this.props.navigation.navigate('ScanCode')
             }}
           >
             <Icon name="scan" size="md" color="#000" />

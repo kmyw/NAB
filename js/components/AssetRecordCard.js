@@ -16,7 +16,7 @@ export default class AssetRecordCard extends Component {
       <View style={styles.wrp}>
         <View style={styles.top}>
           <View style={styles.topLeft}>
-            <Icon name="smile" size={30} color={Style.themeColor} style={{marginRight: 6}} />
+            <Icon name="pay-circle" size={30} color={Style.themeColor} style={{marginRight: 6}} />
             <Text style={styles.txt}>{this.props.name}</Text>
           </View>
           <View style={styles.topRight}>

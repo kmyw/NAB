@@ -17,15 +17,12 @@ export default class TransactionCard extends Component {
   }
   render() {
     return (
-      <View style={[styles.wrp, {paddingTop: this.props.isShowAvator ? 40 : 0, marginTop: this.props.isShowAvator ? 40 : 20}]}>
+      <View style={[styles.wrp, { paddingTop: this.props.isShowAvator ? 40 : 0, marginTop: this.props.isShowAvator ? 40 : 20 }]}>
         {
           this.props.isShowAvator
             ?
             <View style={styles.userInfo}>
-              <Image
-                source={require('../images/vote_tab.png')}
-                style={[{ height: 30, width: 30 }]}
-              />
+              <Icon name="alipay-circle" size={50} color={Style.themeColor} />
               <Text>天边一飞鱼</Text>
             </View>
             :
@@ -76,7 +73,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: Style.themeColor,
-    borderWidth: 1,
+    borderWidth: 2,
     position: 'relative',
     zIndex: 99
   },
@@ -105,6 +102,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     top: -20,
     left: 0,
-    width: screen.width - 40
+    width: screen.width - 40,
+    zIndex: 100
   }
 })

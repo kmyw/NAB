@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
+import { Icon } from '@ant-design/react-native'
 import { Style } from '../global'
 
 export default class TopBar extends Component {
@@ -20,10 +21,7 @@ export default class TopBar extends Component {
             this.props.goPage('ExtractCoin')
           }}
         >
-          <Image
-            source={require('../images/vote_tab.png')}
-            style={[{ height: 24, width: 24 }]}
-          />
+          <Icon name="trademark" size={25} color={Style.themeColor} />
           <Text style={styles.txt}>提币</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -33,10 +31,7 @@ export default class TopBar extends Component {
             this.props.goPage('RechangeCoin')
           }}
         >
-          <Image
-            source={require('../images/vote_tab.png')}
-            style={[{ height: 24, width: 24 }]}
-          />
+          <Icon name="shopping-cart" size={25} color={Style.themeColor} />
           <Text style={styles.txt}>充币</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -46,10 +41,7 @@ export default class TopBar extends Component {
             this.props.goPage('Transaction')
           }}
         >
-          <Image
-            source={require('../images/vote_tab.png')}
-            style={[{ height: 24, width: 24 }]}
-          />
+          <Icon name="transaction" size={25} color={Style.themeColor} />
           <Text style={styles.txt}>转账</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -59,10 +51,7 @@ export default class TopBar extends Component {
             this.props.goPage('ExchangeCoin')
           }}
         >
-          <Image
-            source={require('../images/vote_tab.png')}
-            style={[{ height: 24, width: 24 }]}
-          />
+          <Icon name="shop" size={25} color={Style.themeColor} />
           <Text style={styles.txt}>及时兑换</Text>
         </TouchableOpacity>
       </View>
@@ -83,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: Style.whiteColor,
     borderRadius: 10,
     borderColor: Style.themeColor,
-    borderWidth: 1,
+    borderWidth: 2,
     marginBottom: 20
   },
   btn: {

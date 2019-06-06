@@ -81,7 +81,7 @@ export default class ExchangeCoin extends Component {
                 onPress={() => {
                 }}
               >
-                <Icon name="smile" size={30} color={Style.themeColor} style={{ marginRight: 6 }} />
+                <Icon name="pay-circle" size={30} color={Style.themeColor} style={{ marginRight: 6 }} />
                 <Text style={[styles.txt, { marginRight: 6 }]}>{title === "原始币种" ? this.state.pickerOriginValue : this.state.pickerGoalValue}</Text>
                 <Icon name="caret-down" size="20" color="#000" />
               </TouchableOpacity>
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     borderRadius: 10,
     borderColor: Style.themeColor,
-    borderWidth: 1,
+    borderWidth: 2,
     padding: 6
   },
   cardTitle: {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
+import { Icon } from '@ant-design/react-native'
 import { Style } from '../global'
 
 export default class CoinBar extends Component {
@@ -21,18 +22,15 @@ export default class CoinBar extends Component {
           }}
         >
           <View style={styles.left}>
-            <Image
-              source={require('../images/vote_tab.png')}
-              style={[{ height: 30, width: 30, marginRight: 8 }]}
-            />
+            <Icon name="pay-circle" size={30} color={Style.themeColor} style={{marginRight: 6}} />
             <View style={styles.middle}>
-              <Text style={[styles.txt, {color: Style.themeColor}]}>{this.props.name}</Text>
-              <Text style={[styles.txt, {color: Style.grayColor}]}>$7935.05</Text>
+              <Text style={[styles.txt, { color: Style.themeColor }]}>{this.props.name}</Text>
+              <Text style={[styles.txt, { color: Style.grayColor }]}>$7935.05</Text>
             </View>
           </View>
           <View style={styles.right}>
-            <Text style={[styles.txt, {color: Style.blackColor}]}>12.3364</Text>
-            <Text style={[styles.txt, {color: Style.grayColor}]}>≈$8653.23</Text>
+            <Text style={[styles.txt, { color: Style.blackColor }]}>12.3364</Text>
+            <Text style={[styles.txt, { color: Style.grayColor }]}>≈$8653.23</Text>
           </View>
 
         </TouchableOpacity>
@@ -54,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: Style.whiteColor,
     borderRadius: 10,
     borderColor: Style.themeColor,
-    borderWidth: 1,
+    borderWidth: 2,
     marginBottom: 20
   },
   btn: {
@@ -68,12 +66,14 @@ const styles = StyleSheet.create({
   },
   left: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   middle: {
     flexDirection: 'column'
   },
   right: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'flex-end'
   }
 })
