@@ -35,18 +35,33 @@ export default class Home extends Component {
           />
           <CoinBar
             name="BTC"
+            goRecord={() => {
+              this.props.navigation.navigate('TransactionRecord', {name: 'BTC'})
+            }}
           />
           <CoinBar
             name="ETH"
+            goRecord={() => {
+              this.props.navigation.navigate('TransactionRecord', {name: 'ETH'})
+            }}
           />
           <CoinBar
             name="AUDT"
+            goRecord={() => {
+              this.props.navigation.navigate('TransactionRecord', {name: 'AUDT'})
+            }}
           />
           <CoinBar
             name="NABC"
+            goRecord={() => {
+              this.props.navigation.navigate('TransactionRecord', {name: 'NABC'})
+            }}
           />
           <CoinBar
             name="TEA"
+            goRecord={() => {
+              this.props.navigation.navigate('TransactionRecord', {name: 'TEA'})
+            }}
           />
         </ScrollView>
       </View>

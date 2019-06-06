@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
+import { Icon } from '@ant-design/react-native'
 import { Style } from '../global'
 
 export default class TopBar extends Component {
@@ -11,7 +12,7 @@ export default class TopBar extends Component {
           onPress={() => { this.props.goScanCode() }}
           activeOpacity={0.5}
           background={Style.themeColor}>
-          <Text>扫</Text>
+          <Icon name="scan" size="md" color="#000" />
         </TouchableOpacity>
       </View>
     )

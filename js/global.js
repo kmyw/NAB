@@ -9,7 +9,8 @@ export const Style = {
   blackColor: "#000000",
   themeColor: "#9d0a0e",
   grayColor: "gray",
-  whiteColor: "#ffffff"
+  whiteColor: "#ffffff",
+  eeeColor: "#eeeeee"
 };
 
 export const CoinType = [

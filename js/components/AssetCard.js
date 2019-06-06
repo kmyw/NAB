@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
+import { Icon } from '@ant-design/react-native'
 import { Style } from '../global'
 
 export default class TopBar extends Component {
@@ -46,9 +47,9 @@ export default class TopBar extends Component {
             {
               this.state.isShowAmmount
                 ?
-                "隐藏"
+                <Icon name="eye" size={30} color="#fff" />
                 :
-                "显示"
+                <Icon name="eye-invisible" size={30} color="#fff" />
             }
           </Text>
         </TouchableOpacity>
@@ -62,7 +63,7 @@ export default class TopBar extends Component {
                 this.props.goLockPosition()
               }}
             >
-              <Text>锁仓详情</Text>
+              <Text style={{color: Style.whiteColor}}>锁仓详情</Text>
             </TouchableOpacity>
             :
             null

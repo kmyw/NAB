@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from "react-native"
 import { Style } from '../../global'
+import AssetRecordCard from '../../components/AssetRecordCard'
+import RecordList from '../../components/RecordList'
 
 export default class TransactionRecord extends Component {
   static navigationOptions = ({ navigation, screenProps }) => ({
-    headerTitle: <Text style={{ flex: 1, textAlign: 'center', color: '#fff', fontSize: Style.norFontSize }}>交易记录</Text>,
+    headerTitle: <Text style={{ flex: 1, textAlign: 'center', color: '#fff', fontSize: Style.norFontSize }}>{navigation.getParam('name')}</Text>,
     headerRight: <View />,
     headerTitleStyle: {
       alignSelf: 'center'
@@ -21,7 +23,13 @@ export default class TransactionRecord extends Component {
   render() {
     return (
       <View style={styles.wrp}>
-        <Text style={styles.title}>交易记录</Text>
+        <AssetRecordCard
+          name={this.props.navigation.getParam('name')}
+        />
+        <Text style={{ fontSize: Style.norFontSize, color: Style.themeColor, marginVertical: 20 }}>交易记录</Text>
+        <RecordList
+          name={this.props.navigation.getParam('name')}
+        />
       </View>
     )
   }
@@ -30,14 +38,6 @@ export default class TransactionRecord extends Component {
 const styles = StyleSheet.create({
   wrp: {
     flex: 1,
-    height: 100,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  title: {
-    fontSize: Style.bigFontSize,
-    fontWeight: 'bold',
-    color: Style.blackColor
+    paddingHorizontal: 20
   }
 })

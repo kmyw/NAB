@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from "react-native"
 import { Style } from '../../global'
+import RecordList from '../../components/RecordList' 
 
 export default class ExtractRecord extends Component {
   static navigationOptions = ({ navigation, screenProps }) => ({
@@ -21,7 +22,9 @@ export default class ExtractRecord extends Component {
   render() {
     return (
       <View style={styles.wrp}>
-        <Text style={styles.title}>提币记录</Text>
+        <RecordList
+          name={'BTC'}
+        />
       </View>
     )
   }
@@ -30,14 +33,6 @@ export default class ExtractRecord extends Component {
 const styles = StyleSheet.create({
   wrp: {
     flex: 1,
-    height: 100,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  title: {
-    fontSize: Style.bigFontSize,
-    fontWeight: 'bold',
-    color: Style.blackColor
+    padding: 20
   }
 })

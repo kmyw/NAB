@@ -17,6 +17,7 @@ export default class CoinBar extends Component {
           style={[styles.btn]}
           activeOpacity={0.5}
           onPress={() => {
+            this.props.goRecord()
           }}
         >
           <View style={styles.left}>
