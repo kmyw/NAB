@@ -1,17 +1,31 @@
-import React, { Component } from 'react';
-import { View, Text } from "react-native";
+import React, { Component } from 'react'
+import { View, ScrollView, Dimensions, StyleSheet } from "react-native"
+import TopBar from '../../components/TopBar'
 
-class Find extends Component {
+const screen = Dimensions.get('window')
+
+
+export default class Find extends Component {
   static navigationOptions = {
     header: null
   }
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Faind Screen</Text>
+      <View>
+        <ScrollView contentContainerStyle={styles.scrollWrp}>
+          <TopBar
+            title="发现"
+            isShowScan={false}
+          />
+        </ScrollView>
       </View>
     );
   }
 }
 
-export default Find;
+const styles = StyleSheet.create({
+  scrollWrp: {
+    width: screen.width,
+    paddingHorizontal: 20
+  }
+})

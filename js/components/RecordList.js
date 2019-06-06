@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: Style.themeColor,
     borderRadius: 10,
-    marginBottom: 10
+    marginBottom: 20
   },
   listTop: {
     flexDirection: 'row',

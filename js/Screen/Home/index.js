@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, Dimensions, StyleSheet } from "react-native"
+import { View, ScrollView, Dimensions, StyleSheet } from "react-native"
 import TopBar from '../../components/TopBar'
 import AssetCard from '../../components/AssetCard'
 import ModuleBar from '../../components/ModuleBar'
@@ -17,12 +17,15 @@ export default class Home extends Component {
         <ScrollView contentContainerStyle={styles.scrollWrp}>
           <TopBar
             title="资产"
+            isShowScan={true}
             goScanCode={() => {
               this.props.navigation.navigate('ScanCode')
             }}
           />
           <AssetCard
             ammount={126}
+            title={'账户总资产'}
+            dec={'锁仓详情'}
             isShowLocak={true}
             goLockPosition={() => {
               this.props.navigation.navigate('LockPosition')

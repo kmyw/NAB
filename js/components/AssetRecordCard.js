@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     height: 120,
     marginVertical: 20,
     borderColor: Style.themeColor,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 10,
     justifyContent: 'space-around',
     padding: 10
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderColor: Style.eeeColor,
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     paddingBottom: 10
   },
   topLeft: {
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
-    borderRightWidth: 1,
+    borderRightWidth: 2,
     borderColor: Style.eeeColor
   },
   bottomRight: {

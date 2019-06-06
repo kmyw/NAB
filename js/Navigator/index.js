@@ -21,6 +21,7 @@ import RechangeCoin from '../Screen/Home/RechargeCoin'
 import ExtractRecord from '../Screen/Home/ExtractRecord'
 import RechargeRecord from '../Screen/Home/RechargeRecord'
 import TransactionRecord from '../Screen/Home/TransactionRecord'
+import AccountDetail from '../Screen/Manage/AccountDetail'
 
 // 页面切换动画
 // StackViewStyleInterpolator.forHorizontal：从右向左进入
@@ -52,7 +53,7 @@ const FindStack = createStackNavigator({ Find }, {
     }
   })
 });
-const ManageStack = createStackNavigator({ Manage }, {
+const ManageStack = createStackNavigator({ Manage, AccountDetail, RechargeRecord }, {
   transitionConfig: () => ({ // 设置左右切换
     screenInterpolator: StackViewStyleInterpolator.forHorizontal,
     transitionSpec: {

@@ -24,7 +24,7 @@ export default class TopBar extends Component {
   render() {
     return (
       <View style={styles.wrp}>
-        <Text style={styles.title}>账户总资产</Text>
+        <Text style={styles.title}>{this.props.title}</Text>
         <View style={styles.ammount}>
           <Text style={{ fontSize: Style.bigFontSize, color: Style.whiteColor }}>{
             this.state.isShowAmmount
@@ -63,7 +63,7 @@ export default class TopBar extends Component {
                 this.props.goLockPosition()
               }}
             >
-              <Text style={{color: Style.whiteColor}}>锁仓详情</Text>
+              <Text style={{color: Style.whiteColor}}>{this.props.dec}</Text>
             </TouchableOpacity>
             :
             null

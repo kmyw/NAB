@@ -8,12 +8,18 @@ export default class TopBar extends Component {
     return (
       <View style={styles.wrp}>
         <Text style={styles.title}>{this.props.title}</Text>
-        <TouchableOpacity
-          onPress={() => { this.props.goScanCode() }}
-          activeOpacity={0.5}
-          background={Style.themeColor}>
-          <Icon name="scan" size="md" color="#000" />
-        </TouchableOpacity>
+        {
+          this.props.isShowScan
+            ?
+            <TouchableOpacity
+              onPress={() => { this.props.goScanCode() }}
+              activeOpacity={0.5}
+              background={Style.themeColor}>
+              <Icon name="scan" size={26} color="#000" />
+            </TouchableOpacity>
+            :
+            null
+        }
       </View>
     )
   }
