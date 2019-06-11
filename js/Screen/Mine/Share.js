@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { View, Text, WebView } from "react-native"
+import { View, Text } from "react-native"
+import { Button } from "@ant-design/react-native"
 import { Style } from '../../global'
 
 export default class PersonalInformation extends Component {
   static navigationOptions = ({ navigation, screenProps }) => ({
-    headerTitle: <Text style={{ flex: 1, textAlign: 'center', color: '#fff', fontSize: Style.norFontSize }}>个人信息</Text>,
+    headerTitle: <Text style={{ flex: 1, textAlign: 'center', color: '#fff', fontSize: Style.norFontSize }}>分享</Text>,
     headerRight: <View />,
     headerTitleStyle: {
       alignSelf: 'center'
@@ -18,10 +19,22 @@ export default class PersonalInformation extends Component {
       shadowOpacity: 0, // 透明度
     }
   })
+
+  _btnDom = () => {
+    return (
+      <Button
+        size={'large'}
+        type={'primary'}
+        style={{ marginTop: 30, backgroundColor: Style.themeColor, borderWidth: 0, marginBottom: 40 }}
+        activeStyle={{ backgroundColor: Style.themeColor }}
+      >分享</Button>
+    )
+  }
+
   render() {
     return (
-      <View>
-        <Text>Share</Text>
+      <View style={{padding: 20}}>
+        {this._btnDom()}
       </View>
     )
   }

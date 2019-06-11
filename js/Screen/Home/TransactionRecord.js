@@ -5,6 +5,17 @@ import AssetRecordCard from '../../components/AssetRecordCard'
 import RecordList from '../../components/RecordList'
 
 export default class TransactionRecord extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isAuthentication: true,
+      isShowVersion: true,
+      userName: '',
+      userID: '',
+      records: [],
+      totalCount: ''
+    }
+  }
   static navigationOptions = ({ navigation, screenProps }) => ({
     headerTitle: <Text style={{ flex: 1, textAlign: 'center', color: '#fff', fontSize: Style.norFontSize }}>{navigation.getParam('name')}</Text>,
     headerRight: <View />,
@@ -20,9 +31,11 @@ export default class TransactionRecord extends Component {
       shadowOpacity: 0, // 透明度
     }
   })
+  
   render() {
     return (
       <View style={styles.wrp}>
+        <Text style={{display: 'none'}}>{JSON.stringify(this.state.records)}</Text>
         <AssetRecordCard
           name={this.props.navigation.getParam('name')}
         />

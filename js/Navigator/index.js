@@ -31,6 +31,7 @@ import PersonalInformation from '../Screen/Mine/PersonalInformation'
 import RealNameAuthentication from '../Screen/Mine/RealNameAuthentication'
 import Setting from '../Screen/Mine/Setting'
 import Share from '../Screen/Mine/Share'
+import Login from '../Screen/Login'
 
 // 页面切换动画
 // StackViewStyleInterpolator.forHorizontal：从右向左进入
@@ -38,7 +39,7 @@ import Share from '../Screen/Mine/Share'
 // StackViewStyleInterpolator.forFadeFromBottomAndroid：从底部淡出
 // StackViewStyleInterpolator.forFade：无动画
 
-const HomeStack = createStackNavigator({ Home, Detail, ScanCode, LockPosition, ExtractCoin, ExchangeCoin, Transaction, RechangeCoin, ExtractRecord, RechargeRecord, TransactionRecord }, {
+const HomeStack = createStackNavigator({ Home, Detail, ScanCode, LockPosition, ExtractCoin, ExchangeCoin, Transaction, RechangeCoin, ExtractRecord, RechargeRecord, TransactionRecord, Login }, {
   transitionConfig: () => ({ // 设置左右切换
     screenInterpolator: StackViewStyleInterpolator.forHorizontal,
     transitionSpec: {

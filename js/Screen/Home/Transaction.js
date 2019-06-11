@@ -6,7 +6,7 @@ import { Style } from '../../global'
 
 const screen = Dimensions.get('window')
 
-export default class Transaction extends Component {
+class Transaction extends Component {
   static navigationOptions = ({ navigation, screenProps }) => ({
     headerTitle: <Text style={{ flex: 1, textAlign: 'center', color: '#fff', fontSize: Style.norFontSize }}>转账</Text>,
     headerRight: <View />,
@@ -85,6 +85,8 @@ export default class Transaction extends Component {
         type={'primary'}
         style={{ width: screen.width - 40, marginLeft: 20, marginTop: 30, backgroundColor: Style.themeColor, borderWidth: 0, marginBottom: 40 }}
         activeStyle={{ backgroundColor: Style.themeColor }}
+        onPress={() => {
+        }}
       >转账</Button>
     )
   }
@@ -127,3 +129,5 @@ const styles = StyleSheet.create({
     top: 10
   }
 })
+
+export default Transaction

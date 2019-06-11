@@ -11,7 +11,8 @@ export default class RechargeCoin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      address: '0x1Faa504E850eb32C6f4833519378d3cC17aaD07b'
+      address: '0x1Faa504E850eb32C6f4833519378d3cC17aaD07b',
+      userName: ''
     }
   }
   static navigationOptions = ({ navigation, screenProps }) => ({

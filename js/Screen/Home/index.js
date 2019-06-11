@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { View, ScrollView, Dimensions, StyleSheet } from "react-native"
+import { NavigationEvents } from 'react-navigation'
+import Storage from '../../Storage'
 import TopBar from '../../components/TopBar'
 import AssetCard from '../../components/AssetCard'
 import ModuleBar from '../../components/ModuleBar'
@@ -11,10 +13,26 @@ export default class Home extends Component {
   static navigationOptions = {
     header: null
   }
+
+  _onRerfesh = () => {
+    Storage.load({
+      key: 'userInfo',
+    })
+      .then(ret => {
+        console.log(ret)
+      })
+      .catch(err => {
+        this.props.navigation.navigate('Login')
+      })
+  }
+
   render() {
     return (
       <View>
         <ScrollView contentContainerStyle={styles.scrollWrp}>
+          <NavigationEvents
+            onWillFocus={() => this._onRerfesh()}
+          />
           <TopBar
             title="资产"
             isShowScan={true}
@@ -37,33 +55,33 @@ export default class Home extends Component {
             }}
           />
           <CoinBar
-            name="BTC"
+            name="ETH"
             goRecord={() => {
-              this.props.navigation.navigate('TransactionRecord', {name: 'BTC'})
+              this.props.navigation.navigate('TransactionRecord', { name: 'ETH' })
             }}
           />
           <CoinBar
-            name="ETH"
+            name="BTC"
             goRecord={() => {
-              this.props.navigation.navigate('TransactionRecord', {name: 'ETH'})
+              this.props.navigation.navigate('TransactionRecord', { name: 'BTC' })
             }}
           />
           <CoinBar
             name="AUDT"
             goRecord={() => {
-              this.props.navigation.navigate('TransactionRecord', {name: 'AUDT'})
+              this.props.navigation.navigate('TransactionRecord', { name: 'AUDT' })
             }}
           />
           <CoinBar
             name="NABC"
             goRecord={() => {
-              this.props.navigation.navigate('TransactionRecord', {name: 'NABC'})
+              this.props.navigation.navigate('TransactionRecord', { name: 'NABC' })
             }}
           />
           <CoinBar
             name="TEA"
             goRecord={() => {
-              this.props.navigation.navigate('TransactionRecord', {name: 'TEA'})
+              this.props.navigation.navigate('TransactionRecord', { name: 'TEA' })
             }}
           />
         </ScrollView>

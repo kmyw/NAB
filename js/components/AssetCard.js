@@ -33,7 +33,7 @@ export default class TopBar extends Component {
               :
               "***"
           }</Text>
-          <Text style={styles.con}>AUDT</Text>
+          <Text style={styles.con}>ETH</Text>
         </View>
         <Text style={{ fontSize: Style.smlFontSize, color: Style.whiteColor }}>≈￥22</Text>
         <TouchableOpacity

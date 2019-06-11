@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { View, ScrollView, Dimensions, StyleSheet, TouchableOpacity, Text } from "react-native"
+import { NavigationEvents } from 'react-navigation'
+import Storage from '../../Storage'
 import { Icon } from '@ant-design/react-native'
 import TopBar from '../../components/TopBar'
 import { Style } from '../../global'
@@ -11,7 +13,9 @@ export default class Mine extends Component {
     super(props);
     this.state = {
       isAuthentication: true,
-      isShowVersion: true
+      isShowVersion: true,
+      userName: '',
+      userID: ''
     }
   }
   static navigationOptions = {
@@ -29,8 +33,8 @@ export default class Mine extends Component {
       <View style={styles.left}>
         <Icon name="aliwangwang" size={50} color={Style.themeColor} style={{ marginRight: 10 }} />
         <View style={styles.avatorInfo}>
-          <Text style={styles.txt}>天边一飞鱼</Text>
-          <Text style={styles.txt}>ID:26322598</Text>
+          <Text style={styles.txt}>{this.state.userName}</Text>
+          <Text style={styles.txt}>ID:{this.state.userID}</Text>
         </View>
       </View>
       <Icon name="right" size={25} color={Style.blackColor} />
@@ -57,10 +61,29 @@ export default class Mine extends Component {
     </TouchableOpacity>
   )
 
+  _onRerfesh = () => {
+    var self = this
+    Storage.load({
+      key: 'userInfo',
+    })
+      .then(ret => {
+        self.setState({
+          userName: ret.userName,
+          userID: ret.account
+        })
+      })
+      .catch(err => {
+        this.props.navigation.navigate('Login')
+      })
+  }
+
   render() {
     return (
       <View>
         <ScrollView contentContainerStyle={styles.scrollWrp}>
+          <NavigationEvents
+            onWillFocus={() => this._onRerfesh()}
+          />
           <TopBar
             title="我的"
             isShowScan={false}

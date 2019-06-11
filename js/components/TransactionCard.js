@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from "react-native"
 import { Icon, Picker } from '@ant-design/react-native'
+import Storage from '../Storage'
 import { Style, CoinType } from '../global'
 
 const screen = Dimensions.get('window')
@@ -9,11 +10,24 @@ export default class TransactionCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pickerValue: 'NABC',
-      coinType: CoinType
+      pickerValue: 'ETH',
+      coinType: CoinType,
+      userName: ''
     }
   }
   componentDidMount() {
+    var self = this
+    Storage.load({
+      key: 'userInfo',
+    })
+      .then(ret => {
+        self.setState({
+          userName: ret.userName
+        })
+      })
+      .catch(err => {
+        this.props.navigation.navigate('Login')
+      })
   }
   render() {
     return (
@@ -23,7 +37,7 @@ export default class TransactionCard extends Component {
             ?
             <View style={styles.userInfo}>
               <Icon name="aliwangwang" size={50} color={Style.themeColor} />
-              <Text>天边一飞鱼</Text>
+              <Text>{this.state.userName}</Text>
             </View>
             :
             null

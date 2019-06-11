@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { View, ScrollView, Dimensions, StyleSheet, Text, TouchableOpacity, Image, FlatList } from "react-native"
 import { Carousel } from '@ant-design/react-native'
+import { NavigationEvents } from 'react-navigation'
+import { gql } from '../../common/request'
 import TopBar from '../../components/TopBar'
 import { Style } from '../../global';
 
@@ -36,12 +38,41 @@ export default class Find extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listNewData: listNewData
+      listNewData: listNewData,
+      reciveArticle: []
     }
   }
 
   static navigationOptions = {
     header: null
+  }
+
+  _getArticles = async () => {
+    const param = `
+      query{
+        articles{
+          id
+          title
+          source
+          sourceAt
+          articleURL
+          imgURL
+        }
+      }
+    `
+    const variables = null
+    let res = await gql(param, variables)
+    console.log(res)
+    if (res) {
+      this.setState({
+        listNewData: res.articles,
+        reciveArticle: res.articles
+      })
+    }
+  }
+
+  _onRerfesh = () => {
+    this._getArticles()
   }
 
   _swiperItemDom = (item) => (
@@ -93,7 +124,7 @@ export default class Find extends Component {
   _listDom() {
     return (
       <FlatList
-        data={this.state.listNewData}
+        data={this.state.reciveArticle}
         extraData={this.state}
         renderItem={this._newsItem}
         keyExtractor={(item) => item.id}
@@ -106,6 +137,9 @@ export default class Find extends Component {
     return (
       <View>
         <ScrollView contentContainerStyle={styles.scrollWrp}>
+          <NavigationEvents
+            onWillFocus={() => this._onRerfesh()}
+          />
           <TopBar
             title="发现"
             isShowScan={false}

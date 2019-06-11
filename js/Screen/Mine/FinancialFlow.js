@@ -21,7 +21,7 @@ export default class PersonalInformation extends Component {
   })
   render() {
     return (
-      <View style={{padding: 20}}>
+      <View style={{padding: 20, flex: 1}}>
         <RecordList 
           name={'ETH'}
         />

@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native"
+import { View, Text, TouchableOpacity, StyleSheet, Platform } from "react-native"
 import { Icon } from '@ant-design/react-native'
 import { Style } from '../global'
 
+const phoneOS = Platform.OS
+
 export default class TopBar extends Component {
+
   render() {
     return (
       <View style={styles.wrp}>
@@ -31,7 +34,8 @@ const styles = StyleSheet.create({
     height: 100,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: phoneOS === "ios" ? 30 : 0
   },
   title: {
     fontSize: Style.bigFontSize,
