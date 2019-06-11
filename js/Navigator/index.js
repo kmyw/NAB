@@ -22,6 +22,15 @@ import ExtractRecord from '../Screen/Home/ExtractRecord'
 import RechargeRecord from '../Screen/Home/RechargeRecord'
 import TransactionRecord from '../Screen/Home/TransactionRecord'
 import AccountDetail from '../Screen/Manage/AccountDetail'
+import ChangeInto from '../Screen/Manage/ChangeInto'
+import ArticleDom from '../Screen/Find/ArticleDom'
+import AboutUs from '../Screen/Mine/AboutUs'
+import Feedback from '../Screen/Mine/Feedback'
+import FinancialFlow from '../Screen/Mine/FinancialFlow'
+import PersonalInformation from '../Screen/Mine/PersonalInformation'
+import RealNameAuthentication from '../Screen/Mine/RealNameAuthentication'
+import Setting from '../Screen/Mine/Setting'
+import Share from '../Screen/Mine/Share'
 
 // 页面切换动画
 // StackViewStyleInterpolator.forHorizontal：从右向左进入
@@ -37,7 +46,7 @@ const HomeStack = createStackNavigator({ Home, Detail, ScanCode, LockPosition, E
     }
   })
 });
-const MineStack = createStackNavigator({ Mine, D }, {
+const MineStack = createStackNavigator({ Mine, AboutUs, Feedback, FinancialFlow, PersonalInformation, RealNameAuthentication, Setting, Share }, {
   transitionConfig: () => ({ // 设置左右切换
     screenInterpolator: StackViewStyleInterpolator.forHorizontal,
     transitionSpec: {
@@ -45,7 +54,7 @@ const MineStack = createStackNavigator({ Mine, D }, {
     }
   })
 });
-const FindStack = createStackNavigator({ Find }, {
+const FindStack = createStackNavigator({ Find, ArticleDom }, {
   transitionConfig: () => ({ // 设置左右切换
     screenInterpolator: StackViewStyleInterpolator.forHorizontal,
     transitionSpec: {
@@ -53,7 +62,7 @@ const FindStack = createStackNavigator({ Find }, {
     }
   })
 });
-const ManageStack = createStackNavigator({ Manage, AccountDetail, RechargeRecord }, {
+const ManageStack = createStackNavigator({ Manage, AccountDetail, RechargeRecord, ChangeInto }, {
   transitionConfig: () => ({ // 设置左右切换
     screenInterpolator: StackViewStyleInterpolator.forHorizontal,
     transitionSpec: {

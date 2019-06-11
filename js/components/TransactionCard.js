@@ -22,7 +22,7 @@ export default class TransactionCard extends Component {
           this.props.isShowAvator
             ?
             <View style={styles.userInfo}>
-              <Icon name="alipay-circle" size={50} color={Style.themeColor} />
+              <Icon name="aliwangwang" size={50} color={Style.themeColor} />
               <Text>天边一飞鱼</Text>
             </View>
             :

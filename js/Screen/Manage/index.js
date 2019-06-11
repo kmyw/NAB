@@ -26,7 +26,7 @@ export default class Manage extends Component {
         style={[styles.foreignItem]}
         activeOpacity={0.5}
         onPress={() => {
-          this.props.goPage('RechangeCoin')
+          this.props.navigation.navigate('ChangeInto')
         }}
       >
         <View style={styles.left}>
@@ -45,7 +45,7 @@ export default class Manage extends Component {
         style={[styles.foreignItem]}
         activeOpacity={0.5}
         onPress={() => {
-          this.props.goPage('RechangeCoin')
+          this.props.navigation.navigate('ChangeInto')
         }}
       >
         <View style={styles.left}>
@@ -69,7 +69,7 @@ export default class Manage extends Component {
         style={[styles.foreignItem]}
         activeOpacity={0.5}
         onPress={() => {
-          this.props.goPage('RechangeCoin')
+          this.props.navigation.navigate('ChangeInto')
         }}
       >
         <View style={styles.left}>
